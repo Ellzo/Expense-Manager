@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddEditFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:elevation="@dimen/small_dimen"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="@dimen/regular_dimen"
+        app:layout_constraintBottom_toTopOf="@id/btnExpense"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputName"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/large_dimen"
+                android:layout_marginTop="@dimen/medium_text_size"
+                app:errorEnabled="true"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tran_name"
+                    android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputAmount"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/large_dimen"
+                app:errorEnabled="true"
+                app:layout_constraintTop_toBottomOf="@id/inputName">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tran_amount"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/spinnerCat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/large_dimen"
+                android:layout_marginTop="@dimen/regular_dimen"
+                android:background="@drawable/spinner_background"
+                android:padding="@dimen/medium_dimen"
+                app:layout_constraintTop_toBottomOf="@id/inputAmount" />
+
+            <TextView
+                android:id="@+id/tvCatError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_dimen"
+                android:text="@string/cat_error"
+                android:textColor="#B00020"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/spinnerCat"
+                app:layout_constraintTop_toBottomOf="@id/spinnerCat" />
+
+            <Spinner
+                android:id="@+id/spinnerType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/large_dimen"
+                android:layout_marginTop="@dimen/medium_dimen"
+                android:background="@drawable/spinner_background"
+                android:padding="@dimen/medium_dimen"
+                app:layout_constraintTop_toBottomOf="@id/tvCatError" />
+
+            <TextView
+                android:id="@+id/tvTypeError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_dimen"
+                android:text="@string/type_error"
+                android:textColor="#B00020"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/spinnerType"
+                app:layout_constraintTop_toBottomOf="@id/spinnerType" />
+
+            <TextView
+                android:id="@+id/tvDateFrom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/large_dimen"
+                android:layout_marginTop="@dimen/medium_dimen"
+                android:text="@string/date"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintBottom_toBottomOf="@id/linearDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/linearDate" />
+
+            <LinearLayout
+                android:id="@+id/linearDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/medium_dimen"
+                android:layout_marginTop="@dimen/medium_dimen"
+                android:background="@drawable/spinner_background"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/medium_dimen"
+                app:layout_constraintStart_toEndOf="@id/tvDateFrom"
+                app:layout_constraintTop_toBottomOf="@id/tvTypeError">
+
+                <TextView
+                    android:id="@+id/tvDateVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/regular_dimen"
+                    android:text="15/09/2020"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="@dimen/large_dimen"
+                    android:layout_height="@dimen/large_dimen"
+                    android:layout_marginStart="@dimen/regular_dimen"
+                    android:src="@drawable/ic_calendar" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvTimeTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_dimen"
+                android:text="@string/time"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintBottom_toBottomOf="@id/linearTime"
+                app:layout_constraintStart_toStartOf="@id/tvDateFrom"
+                app:layout_constraintTop_toTopOf="@id/linearTime" />
+
+            <LinearLayout
+                android:id="@+id/linearTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/regular_dimen"
+                android:layout_marginEnd="@dimen/large_dimen"
+                android:background="@drawable/spinner_background"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/medium_dimen"
+                app:layout_constraintStart_toStartOf="@id/linearDate"
+                app:layout_constraintTop_toBottomOf="@id/linearDate">
+
+                <TextView
+                    android:id="@+id/tvTimeVal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/regular_dimen"
+                    android:text="20:15"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="@dimen/large_dimen"
+                    android:layout_height="@dimen/large_dimen"
+                    android:layout_marginStart="@dimen/regular_dimen"
+                    android:src="@drawable/ic_time" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearEndDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/regular_dimen"
+                android:layout_marginEnd="@dimen/large_dimen"
+                android:background="@drawable/spinner_background"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/medium_dimen"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/linearDate"
+                app:layout_constraintTop_toBottomOf="@id/linearDate">
+
+                <TextView
+                    android:id="@+id/tvEndDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/regular_dimen"
+                    android:text="18/10/2020"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="@dimen/large_dimen"
+                    android:layout_height="@dimen/large_dimen"
+                    android:layout_marginStart="@dimen/regular_dimen"
+                    android:src="@drawable/ic_calendar" />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/checkRecurring"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recurring_tran"
+                app:layout_constraintStart_toStartOf="@id/linearTime"
+                app:layout_constraintTop_toBottomOf="@id/linearTime" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputComments"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/large_dimen"
+                app:layout_constraintTop_toBottomOf="@id/checkRecurring">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:hint="@string/comments"
+                    android:inputType="textMultiLine"
+                    android:lines="4" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/btnExpense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#D00"
+        android:elevation="@dimen/tiny_dimen"
+        android:gravity="center"
+        android:paddingVertical="@dimen/medium_dimen"
+        android:text="@string/expense"
+        android:textAllCaps="true"
+        android:textColor="#FFF"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnIncome"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/btnIncome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#0D0"
+        android:elevation="@dimen/tiny_dimen"
+        android:gravity="center"
+        android:paddingVertical="@dimen/medium_dimen"
+        android:text="@string/income"
+        android:textAllCaps="true"
+        android:textColor="#FFF"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnExpense" />
+</androidx.constraintlayout.widget.ConstraintLayout>

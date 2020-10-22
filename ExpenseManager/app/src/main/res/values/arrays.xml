@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categories">
+        <item>Select Category</item>
+        <item>Business</item>
+        <item>Education</item>
+        <item>Health</item>
+        <item>Food &amp; Drinks</item>
+        <item>Habitation</item>
+        <item>Transport</item>
+        <item>Entertainment</item>
+        <item>Technology</item>
+        <item>Clothing</item>
+        <item>Shopping</item>
+        <item>Personal</item>
+        <item>Loan</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="types">
+        <item>Select Payment Type</item>
+        <item>@string/cash</item>
+        <item>@string/credit</item>
+        <item>@string/cheque</item>
+        <item>@string/other_pays</item>
+    </string-array>
+
+    <string-array name="months">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+</resources>

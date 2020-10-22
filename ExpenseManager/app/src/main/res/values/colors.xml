@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryLight">#009BF5</color>
+    <color name="colorPrimary">#214ED4</color>
+    <color name="colorPrimaryDark">#002C96</color>
+    <color name="colorAccent">#1FD671</color>
+
+    <color name="colorCash">#2c7</color>
+    <color name="colorCredit">#27c</color>
+    <color name="colorCheque">#eb3</color>
+    <color name="colorOtherPays">#aaa</color>
+</resources>

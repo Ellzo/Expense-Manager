@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_gravity="top">
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:visibility="gone" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/homeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="@dimen/small_dimen">
+
+            <TextView
+                android:id="@+id/tvNetBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/regular_dimen"
+                android:layout_marginTop="@dimen/medium_dimen"
+                android:text="@string/net_balance"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvNetBalanceVal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/medium_dimen"
+                android:layout_marginTop="@dimen/regular_dimen"
+                android:text="$1000.00"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/very_large_text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvNetBalance"
+                app:layout_constraintTop_toBottomOf="@id/tvNetBalance" />
+
+            <com.asif.expensemanager.PieChart
+                android:id="@+id/pie"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:padding="@dimen/small_dimen"
+                app:arcSize="@dimen/regular_dimen"
+                app:layout_constraintBottom_toBottomOf="@id/tvCheque"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvNetBalanceVal"
+                app:layout_constraintTop_toTopOf="@id/tvNetBalance" />
+
+            <TextView
+                android:id="@+id/tvCash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/regular_dimen"
+                android:textColor="@color/colorCash"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintStart_toStartOf="@id/tvNetBalance"
+                app:layout_constraintTop_toBottomOf="@id/tvNetBalanceVal" />
+
+            <TextView
+                android:id="@+id/tvCredit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/regular_dimen"
+                android:textColor="@color/colorCredit"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintStart_toStartOf="@id/tvCash"
+                app:layout_constraintTop_toBottomOf="@id/tvCash" />
+
+            <TextView
+                android:id="@+id/tvCheque"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/regular_dimen"
+                android:textColor="@color/colorCheque"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintStart_toStartOf="@id/tvCredit"
+                app:layout_constraintTop_toBottomOf="@id/tvCredit" />
+
+            <TextView
+                android:id="@+id/tvOther"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/regular_dimen"
+                android:textColor="@color/colorOtherPays"
+                android:textSize="@dimen/medium_text_size"
+                app:layout_constraintStart_toStartOf="@id/tvCheque"
+                app:layout_constraintTop_toBottomOf="@id/tvCheque" />
+
+
+            <View
+                android:id="@+id/verticalSeparator"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/very_tiny_dimen"
+                android:layout_marginHorizontal="@dimen/medium_dimen"
+                android:layout_marginTop="@dimen/regular_dimen"
+                android:background="@color/colorPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@id/tvOther" />
+
+            <TextView
+                android:id="@+id/tvUpcoming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_dimen"
+                android:text="@string/up_trans"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/medium_text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvNetBalance"
+                app:layout_constraintTop_toBottomOf="@id/verticalSeparator" />
+
+            <TextView
+                android:id="@+id/btnViewAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/regular_dimen"
+                android:text="@string/view_all"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/normal_text_size"
+                app:layout_constraintBottom_toBottomOf="@id/tvUpcoming"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerUpcoming"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/regular_dimen"
+                app:layout_constraintTop_toBottomOf="@id/tvUpcoming" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/regular_dimen"
+                android:layout_marginBottom="@dimen/regular_dimen"
+                android:contentDescription="@string/add_tran"
+                android:padding="@dimen/tiny_dimen"
+                android:src="@drawable/ic_add"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:labelVisibilityMode="unlabeled"
+            app:menu="@menu/bottom_nav_menu" />
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/navigation_drawer_header"
+        app:menu="@menu/drawer_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
