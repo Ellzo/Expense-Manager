@@ -4,61 +4,44 @@
     android:id="@+id/card"
     android:layout_width="match_parent"
     android:layout_height="@dimen/extra_huge_dimen"
-    android:padding="@dimen/regular_dimen"
     android:layout_margin="@dimen/regular_dimen"
     app:cardCornerRadius="@dimen/small_dimen"
-    app:cardElevation="@dimen/small_dimen"
+    app:cardElevation="@dimen/tiny_dimen"
     app:rippleColor="@color/colorPrimary">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorAccentLight">
+
+        <View
+            android:id="@+id/viewState"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/small_dimen"
+            android:background="#0F0"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvMonthYear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/large_dimen"
-            android:layout_marginTop="@dimen/medium_dimen"
-            android:text="January"
+            android:layout_marginTop="@dimen/regular_dimen"
             android:textAllCaps="true"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="@dimen/large_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/imgWarning"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/small_dimen"
-            android:src="@drawable/ic_warning"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@id/tvWarning"
-            app:layout_constraintEnd_toStartOf="@id/tvWarning"
-            app:layout_constraintTop_toTopOf="@id/tvWarning" />
-
-        <TextView
-            android:id="@+id/tvWarning"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/regular_dimen"
-            android:text="@string/budget_exceeded"
-            android:textAllCaps="true"
-            android:textColor="#B00020"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@id/tvMonthYear"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/viewState" />
 
         <TextView
             android:id="@+id/tvBalance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/regular_dimen"
             android:layout_marginEnd="@dimen/regular_dimen"
             android:text="@string/net_balance"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/medium_text_size"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/tvBalanceVal"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
@@ -70,9 +53,51 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/regular_dimen"
             android:textSize="@dimen/medium_text_size"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tvBalance"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tvBalance"
-            app:layout_constraintTop_toBottomOf="@id/tvMonthYear" />
+            app:layout_constraintTop_toTopOf="@id/tvBalance" />
+
+        <ProgressBar
+            android:id="@+id/progressBalance"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/huge_dimen"
+            android:indeterminate="false"
+            android:progressBackgroundTint="#F00"
+            android:progressBackgroundTintMode="src_over"
+            android:progressTint="#0F0"
+            android:secondaryProgressTint="#F00"
+            app:layout_constraintBottom_toTopOf="@id/tvWarning"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvBalance" />
+
+        <ImageView
+            android:id="@+id/imgWarning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/small_dimen"
+            android:src="@drawable/ic_warning"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/tvWarning"
+            app:layout_constraintEnd_toStartOf="@id/tvWarning"
+            app:layout_constraintTop_toTopOf="@id/tvWarning"
+            android:contentDescription="@string/budget_exceeded" />
+
+        <TextView
+            android:id="@+id/tvWarning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/small_dimen"
+            android:layout_marginBottom="@dimen/small_dimen"
+            android:text="@string/budget_exceeded"
+            android:textAllCaps="true"
+            android:textColor="#B00020"
+            android:textSize="@dimen/small_text_size"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

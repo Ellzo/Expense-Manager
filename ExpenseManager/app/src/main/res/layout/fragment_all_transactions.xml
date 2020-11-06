@@ -4,27 +4,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/editSearch"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_search"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/regular_dimen"
-        android:layout_marginTop="@dimen/medium_dimen"
-        android:drawableEnd="@drawable/ic_search"
-        android:hint="@string/search"
-        android:inputType="textAutoComplete"
-        android:maxLines="1"
-        app:layout_constraintEnd_toStartOf="@id/spinnerCat"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@color/colorAccentLight"
+        android:elevation="@dimen/small_dimen"
+        android:paddingHorizontal="@dimen/regular_dimen"
+        android:paddingTop="@dimen/small_dimen"
+        android:paddingBottom="@dimen/regular_dimen"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Spinner
-        android:id="@+id/spinnerCat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/editSearch"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/editSearch" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputSearch"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/regular_dimen"
+            android:layout_marginTop="@dimen/small_dimen"
+            app:errorEnabled="false"
+            app:layout_constraintEnd_toStartOf="@id/spinnerCat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_search"
+                android:hint="@string/search"
+                android:inputType="textAutoComplete"
+                android:maxLines="1"
+                android:textColor="@color/colorPrimary" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/spinnerCat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_dimen"
+            android:padding="@dimen/regular_dimen"
+            app:layout_constraintEnd_toEndOf="@id/inputSearch"
+            app:layout_constraintStart_toStartOf="@id/inputSearch"
+            app:layout_constraintTop_toBottomOf="@id/inputSearch" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ProgressBar
         android:id="@+id/progress"
@@ -33,34 +55,34 @@
         app:layout_constraintBottom_toTopOf="@id/bottomNav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinnerCat" />
+        app:layout_constraintTop_toBottomOf="@id/constraint_search" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/medium_dimen"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/bottomNav"
-        app:layout_constraintTop_toBottomOf="@id/editSearch" />
+        app:layout_constraintTop_toBottomOf="@id/constraint_search" />
 
     <TextView
         android:id="@+id/tvEmpty"
-        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/nothing_found"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottomNav"
-        app:layout_constraintTop_toBottomOf="@id/spinnerCat"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="@dimen/large_text_size"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraint_search" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:elevation="@dimen/small_dimen"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav_menu" />

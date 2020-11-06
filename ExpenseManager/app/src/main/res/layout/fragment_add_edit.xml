@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AddEditFragment">
+    tools:context=".ui.fragments.AddEditFragment">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
@@ -18,7 +18,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:paddingBottom="@dimen/regular_dimen"
         app:layout_constraintBottom_toTopOf="@id/btnExpense"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
 
@@ -131,7 +130,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/regular_dimen"
-                    android:text="15/09/2020"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold" />
 
@@ -139,7 +137,8 @@
                     android:layout_width="@dimen/large_dimen"
                     android:layout_height="@dimen/large_dimen"
                     android:layout_marginStart="@dimen/regular_dimen"
-                    android:src="@drawable/ic_calendar" />
+                    android:src="@drawable/ic_calendar"
+                    android:contentDescription="@string/date" />
             </LinearLayout>
 
             <TextView
@@ -171,7 +170,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/regular_dimen"
-                    android:text="20:15"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold" />
 
@@ -179,7 +177,8 @@
                     android:layout_width="@dimen/large_dimen"
                     android:layout_height="@dimen/large_dimen"
                     android:layout_marginStart="@dimen/regular_dimen"
-                    android:src="@drawable/ic_time" />
+                    android:src="@drawable/ic_time"
+                    android:contentDescription="@string/time" />
             </LinearLayout>
 
             <LinearLayout
@@ -201,7 +200,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/regular_dimen"
-                    android:text="18/10/2020"
                     android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold" />
 
@@ -209,7 +207,8 @@
                     android:layout_width="@dimen/large_dimen"
                     android:layout_height="@dimen/large_dimen"
                     android:layout_marginStart="@dimen/regular_dimen"
-                    android:src="@drawable/ic_calendar" />
+                    android:src="@drawable/ic_calendar"
+                    android:contentDescription="@string/to_date" />
             </LinearLayout>
 
             <CheckBox
@@ -226,6 +225,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/large_dimen"
+                android:layout_marginBottom="@dimen/regular_dimen"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/checkRecurring">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -244,7 +245,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#D00"
-        android:elevation="@dimen/tiny_dimen"
+        android:elevation="@dimen/small_dimen"
         android:gravity="center"
         android:paddingVertical="@dimen/medium_dimen"
         android:text="@string/expense"
@@ -260,7 +261,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#0D0"
-        android:elevation="@dimen/tiny_dimen"
+        android:elevation="@dimen/small_dimen"
         android:gravity="center"
         android:paddingVertical="@dimen/medium_dimen"
         android:text="@string/income"

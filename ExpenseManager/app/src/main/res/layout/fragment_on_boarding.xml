@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OnBoardingFragment">
+    tools:context=".ui.fragments.OnBoardingFragment">
 
     <TextView
         android:id="@+id/tvGetStarted"
@@ -76,7 +76,7 @@
         android:layout_marginHorizontal="@dimen/large_dimen"
         android:layout_marginTop="@dimen/regular_dimen"
         app:errorEnabled="true"
-        app:layout_constraintBottom_toTopOf="@id/btnContinue"
+        app:layout_constraintBottom_toTopOf="@id/btnSave"
         app:layout_constraintTop_toBottomOf="@id/inputBudget">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -87,12 +87,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnContinue"
+        android:id="@+id/btnSave"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/colorAccent"
         android:padding="@dimen/medium_dimen"
-        android:text="@string/continue_txt"
+        android:text="@string/save"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/medium_text_size"
         app:layout_constraintBottom_toBottomOf="parent" />

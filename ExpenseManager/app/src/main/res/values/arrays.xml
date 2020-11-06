@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="categories">
-        <item>Select Category</item>
+        <item>@string/select_category</item>
         <item>Business</item>
         <item>Education</item>
         <item>Health</item>
@@ -14,10 +14,10 @@
         <item>Shopping</item>
         <item>Personal</item>
         <item>Loan</item>
-        <item>Other</item>
+        <item>@string/other</item>
     </string-array>
 
-    <string-array name="types">
+    <string-array name="pay_types">
         <item>Select Payment Type</item>
         <item>@string/cash</item>
         <item>@string/credit</item>
@@ -38,5 +38,20 @@
         <item>October</item>
         <item>November</item>
         <item>December</item>
+    </string-array>
+
+    <string-array name="report_types">
+        <item>@string/monthly</item>
+        <item>@string/annually</item>
+    </string-array>
+
+    <string-array name="week_days">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
     </string-array>
 </resources>

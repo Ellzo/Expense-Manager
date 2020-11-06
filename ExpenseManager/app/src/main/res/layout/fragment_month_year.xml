@@ -1,45 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MonthYearFragment">
-    <com.google.android.material.appbar.MaterialToolbar
+    tools:context=".ui.fragments.MonthYearFragment">
+
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:background="@color/colorAccent"
-        app:titleTextColor="#FFF"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/tvBalance"
-        android:text="@string/net_balance"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintEnd_toStartOf="@id/tvBalanceVal"
-        android:textSize="@dimen/medium_text_size"
-        android:layout_width="wrap_content"
-        android:layout_marginStart="@dimen/small_dimen"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/tvBalanceVal"
-        android:layout_marginEnd="@dimen/regular_dimen"
-        app:layout_constraintTop_toTopOf="@id/tvBalance"
-        android:textSize="@dimen/medium_text_size"
-        android:textColor="@color/colorAccent"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/tvBalance"
-        app:layout_constraintStart_toEndOf="@id/tvBalance"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorAccent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end|center_vertical"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+            <TextView
+                android:id="@+id/toolbarTitle"
+                android:layout_weight="1"
+                android:textColor="#FFF"
+                android:gravity="start"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/imgCalendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/medium_dimen"
+                android:contentDescription="@string/calendar"
+                android:src="@drawable/ic_calendar"
+                app:tint="#FFF" />
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
-        app:layout_constraintTop_toBottomOf="@id/tvBalanceVal"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="0dp"/>
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

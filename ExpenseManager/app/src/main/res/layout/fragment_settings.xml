@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.SettingsFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorAccent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_clear"
+        app:title="@string/settings"
+        app:titleTextColor="#FFF" />
+
+    <TextView
+        android:id="@+id/tvBasic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium_dimen"
+        android:layout_marginTop="@dimen/medium_dimen"
+        android:text="@string/basic"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/larger_text_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <TextView
+        android:id="@+id/btnEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/medium_dimen"
+        android:text="@string/edit"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintBottom_toBottomOf="@id/tvBasic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvBasic" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/medium_dimen"
+        android:layout_marginTop="@dimen/regular_dimen"
+        android:text="@string/name"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintStart_toStartOf="@id/tvBasic"
+        app:layout_constraintTop_toBottomOf="@id/tvBasic" />
+
+    <TextView
+        android:id="@+id/tvNameVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/large_dimen"
+        android:textColor="@color/colorPrimaryLight"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintBottom_toBottomOf="@id/tvName"
+        app:layout_constraintStart_toEndOf="@id/tvName"
+        app:layout_constraintTop_toTopOf="@id/tvName" />
+
+    <TextView
+        android:id="@+id/tvBudget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/budget"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+    <TextView
+        android:id="@+id/tvBudgetVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryLight"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintBottom_toBottomOf="@id/tvBudget"
+        app:layout_constraintStart_toStartOf="@id/tvNameVal"
+        app:layout_constraintTop_toTopOf="@id/tvBudget" />
+
+    <TextView
+        android:id="@+id/tvIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/income"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintStart_toStartOf="@id/tvBudget"
+        app:layout_constraintTop_toBottomOf="@id/tvBudget" />
+
+    <TextView
+        android:id="@+id/tvIncomeVal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryLight"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintBottom_toBottomOf="@id/tvIncome"
+        app:layout_constraintStart_toStartOf="@id/tvBudgetVal"
+        app:layout_constraintTop_toTopOf="@id/tvIncome" />
+
+    <View
+        android:id="@+id/viewSeparator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/very_tiny_dimen"
+        android:layout_marginHorizontal="@dimen/very_large_dimen"
+        android:layout_marginTop="@dimen/medium_dimen"
+        android:background="@color/colorPrimaryLight"
+        app:layout_constraintTop_toBottomOf="@id/tvIncome" />
+
+    <Button
+        android:id="@+id/btnEditCats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/large_dimen"
+        android:paddingHorizontal="@dimen/medium_dimen"
+        android:paddingVertical="@dimen/regular_dimen"
+        android:text="@string/edit_categories"
+        android:textColor="#FFF"
+        android:textSize="@dimen/large_text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewSeparator" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,10 +3,11 @@
     <color name="colorPrimaryLight">#009BF5</color>
     <color name="colorPrimary">#214ED4</color>
     <color name="colorPrimaryDark">#002C96</color>
-    <color name="colorAccent">#1FD671</color>
+    <color name="colorAccent">#2EDBC5</color>
+    <color name="colorAccentLight">#EBFFFE</color>
 
     <color name="colorCash">#2c7</color>
-    <color name="colorCredit">#27c</color>
-    <color name="colorCheque">#eb3</color>
-    <color name="colorOtherPays">#aaa</color>
+    <color name="colorCredit">#29B6F6</color>
+    <color name="colorCheque">#EB3</color>
+    <color name="colorOtherPays">#E57373</color>
 </resources>
